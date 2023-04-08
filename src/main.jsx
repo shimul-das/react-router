@@ -13,6 +13,7 @@ import { Contact } from './assets/Component/Contact/Contact';
 import { Header } from './assets/Component/Header/Header';
 import Home from './assets/Component/Home/Home';
 import Friends from './assets/Component/Friends/Friends';
+import { FriendDetail } from './assets/Component/FriendDetail/FriendDetail';
 //simple route
 // const router = createBrowserRouter([
 // {
@@ -43,6 +44,11 @@ element:<About></About>
 path:'/friends',
 element:<Friends></Friends>,
 loader:()=>fetch('https://jsonplaceholder.typicode.com/users')
+},
+//dnamic route pathe e main path er por clone dile eta dynamic hisabe kaj korbe
+{
+path:'friend/:friendId',
+element:<FriendDetail></FriendDetail>
 },
 {
 path:'contact',
