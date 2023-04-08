@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import './header.css'
 export const Header = () => {
 return (
 // <div>
@@ -9,10 +9,11 @@ return (
     // <a href="/contact">Contact</a>
     // </div>
     //use to to remove load
-<div>
+<nav>
     <Link to="/">Home</Link>
     <Link to="/about">About</Link>
     <Link to="/contact">Contact</Link>
-</div>
+    <Link to="/friends">friends</Link>
+</nav>
 )
 }
