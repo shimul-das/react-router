@@ -10,25 +10,42 @@ import {
 } from "react-router-dom";
 import { About } from './assets/Component/About/About';
 import { Contact } from './assets/Component/Contact/Contact';
+import { Header } from './assets/Component/Header/Header';
+import Home from './assets/Component/Home/Home';
+//simple route
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <div>This is default router</div>,
+//   },
+//   {
+//     path: "/about",
+//     element:<About></About> ,
+//   },
+//   {
+//     path: "/contact",
+//     element: <Contact></Contact>,
+//   },
+// ]);
 
-const router = createBrowserRouter([
+//nested route
+const router=createBrowserRouter([
   {
-    path: "/",
-    element: <div>This is default router</div>,
-  },
-  {
-    path: "/about",
-    element:<About></About> ,
-  },
-  {
-    path: "/contact",
-    element: <Contact></Contact>,
-  },
-]);
+    path:'/',
+    element:<Home></Home>,
+    children:[
+      {
+        path:'about',
+      }
+    ]
+  }
+])
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <App /> */}
     <RouterProvider router={router} />
+    {/* <App /> */}
+    {/* <Header></Header> */}
+    
 
   </React.StrictMode>,
 )
